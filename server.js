@@ -35,7 +35,10 @@ app.post('/getReferencia', async (req, res) => {
     return res.status(500).json({ error: 'Error interno del servidor.' });
   }
 });
-
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+  });
+  
 app.listen(port, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
 });
