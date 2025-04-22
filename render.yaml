@@ -3,6 +3,8 @@ services:
     name: getreferencia
     env: node
     plan: free
-    buildCommand: npm install
+    buildCommand: |
+      npm install
+      npx playwright install --with-deps
     startCommand: node server.js
     autoDeploy: true
