@@ -2,10 +2,11 @@
   "name": "empty",
   "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "start": "node obtener_referencia.js",
-    "fix-deps": "npm audit fix --force",
-    "install-chromium": "sudo apt-get update && sudo apt-get install -y chromium-browser"
+ "scripts": {
+  "start": "node server.js",
+  "postinstall": "npx playwright install --with-deps",
+  "fix-deps": "npm audit fix --force",
+  "install-chromium": "sudo apt-get update && sudo apt-get install -y chromium-browser"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
