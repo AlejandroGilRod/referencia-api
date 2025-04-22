@@ -1,0 +1,27 @@
+{
+  "name": "empty",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node obtener_referencia.js",
+    "fix-deps": "npm audit fix --force",
+    "install-chromium": "sudo apt-get update && sudo apt-get install -y chromium-browser"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "playwright": "^1.52.0",
+    "playwright-extra": "^4.3.6",
+    "puppeteer": "^21.11.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "obtener_referencia.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
