@@ -4,7 +4,7 @@
   "type": "module",
  "scripts": {
   "start": "node server.js",
-  "postinstall": "npx playwright install --with-deps",
+  "postinstall": "npx playwright install chromium",
   "fix-deps": "npm audit fix --force",
   "install-chromium": "sudo apt-get update && sudo apt-get install -y chromium-browser"
   },
