@@ -20,14 +20,15 @@ app.post('/getReferencia', async (req, res) => {
     const referencia = await getReferencia(dni, fecha, casilla);
 
     if (referencia) {
-      const pdfBuffer = fs.readFileSync('pagina_final.pdf');
-      const pdfBase64 = pdfBuffer.toString('base64');
-
-      return res.json({
-        referencia,
-        pdfBase64
-      });
-    } else {
+        res.set({
+          'Content-Type': 'application/pdf',
+          'Content-Disposition': `attachment; filename=referencia_${referencia}.pdf`,
+          'X-Referencia': referencia, // 👈 referencia como header
+        });
+      
+        res.send(fs.readFileSync('pagina_final.pdf'));
+      }
+      else {
       return res.status(500).json({ error: 'No se pudo obtener la referencia.' });
     }
   } catch (err) {
