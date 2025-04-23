@@ -180,7 +180,7 @@ async function getReferencia(dni, fechaValidez, valorCasilla) {
     await page.click('input.AEAT_boton_main');
     await page.waitForURL('**/SvVisDF24Net', { timeout: 10000 });
 
-    await page.pdf({ path: 'pagina_final.pdf', format: 'A4', printBackground: true, scale: 0.85 });
+    await page.pdf({ path: 'pagina_final.pdf', format: 'A4', printBackground: true, scale: 0.80 });
     console.log('✅ PDF guardado como pagina_final.pdf');
 
     return referencia;
